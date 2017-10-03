@@ -34,6 +34,10 @@ a:hover {
 	padding-top: 150px;
 }
 
+#current-word {
+	font-size: 80px;
+}
+
 #candle-gif {
 	height: 500px;
 }

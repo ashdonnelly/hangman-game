@@ -20,7 +20,7 @@ var words = [
 	"shaman",
 	"shapeshift",
 	"bonfire",
-	"enchantment",
+	"enchant",
 	"conjure",
 	"alchemy",
 	"mystic",
@@ -29,59 +29,106 @@ var words = [
 	"trance",
 	"charm",
 	"rune",
-	"wizardry",
+	"aura",
 	"hermit",
 	"oracle",
 	"omen",
 	"supernatural",
 	"ritual",
 	"snake",
-	"incubus",
-	"succubus",
+	"equinox",
+	"ceremony",
 	"nightmare",
 	"serpent",
 	"cemetary",
 	"tomb",
 	"flames",
 	"spirit",
-	"poison",
-	"venom",
+	"reanimate",
+	"arcane",
 	"spellbook",
 	"crone",
 	"chant",
-	"shadows"
+	"shadows",
+	"candlelight",
+	"skull",
+	"incense",
+	"chalice",
+	"elixir",
+	"paranormal",
+	"solstice",
+	"zodiac",
+	"powers",
+	"incantation",
+	"plague",
+	"druid",
+	"summon",
+	"undead",
+	"exorcism"
 ];
 
-var word = words[Math.floor(Math.random() * words.length)];
+
+// pick a random word and display in current-word
+var currentWord = words[Math.floor(Math.random() * words.length)];
+
+// display picked word in "current word", with "_" replacing every 
+// letter
 
 var answerArray = [];
 
-for (var i = 0; i < word.length; i++) {
+for (var i = 0; i < currentWord.length; i++) {
 	answerArray[i] = "_";
 }
 
+document.getElementById("current-word").innerHTML = answerArray.join(" ");
+
+// when a letter is pressed, look through current word one letter
+// at a time to see if any matches; if there are matches, show
+// the letter
+
 var remainingLetters = word.length;
 
+
+
 while (remainingLetters > 0) {
+	var guess = onkeyup;
+};
 
-	alert(answerArray.join(" "));
+// if letter is not in the current word, display it in the "guessed
+// letters" section
 
-	var guess = prompt("Guess a letter, or click cancel to stop playing.");
 
-	if (guess === null) {
-		break;
-	} else if (guess.length !== 1) {
-		alert("Please enter a single letter.");
-	} else {
-		for (var j = 0; j < word.length; j++) {
-			if (word[j] === guess) {
-				answerArray[j] = guess;
-				remainingLetters--;
-			}
-		}
-	}
-}
+// if letter hs already been pressed, do nothing
 
-alert(answerArray.join(" "));
 
-alert("Good job! The answer was " + word + ".");
+// once 10 letters are in this section, player loses and another
+// current word is chosen
+
+
+// if user removes all dashes from chosen word, they score 1 point
+// and a new current word is chosen
+
+
+// var remainingLetters = word.length;
+
+// while (remainingLetters > 0) {
+
+// 	alert(answerArray.join(" "));
+
+// 	var guess = onkeyup;
+
+// 	if (guess === null) {
+// 		break;
+// 	} else {
+// 		for (var j = 0; j < word.length; j++) {
+// 			if (word[j] === guess) {
+// 				answerArray[j] = guess;
+// 				remainingLetters--;
+// 			}
+// 		}
+// 	}
+// }
+
+// alert(answerArray.join(" "));
+
+// alert("Good job! The answer was " + word + ".");

@@ -7,7 +7,7 @@
 	<link rel="icon" type="image/x-icon" href="assets/images/source-code-icon-32-213242.png">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
-	<script type="text/javascript" src="assets/javascript/game.js"></script>
+
 </head>
 
 <body>
@@ -20,29 +20,29 @@
 		</div>
 	</div>
 
-	<div class="row" id="instructions">
+	<div class="row" id="subtitle">
 		<div class="col-md-12">
-			<h3 id="subtitle">Hangman for Witches &dagger; Press Any Key to Guess</h3>
+			<h3>Hangman for Witches &dagger; Press a Letter to Guess</h3>
 		</div>
 	</div>
 
 	<div class="row" id="guesses-left-and-guessed-letters">
 		<div class="col-md-6">
 			<h3>Guesses Left:</h3>
-			<h2 class="guesses-left"></h2>
+			<h2 id="guesses-left"></h2>
 			<h3>Guessed Letters:</h3>
-			<h2 class="guessed-letters"></h2>
+			<h2 id="guessed-letters"></h2>
 		</div>
 
 		<div class="col-md-6">
-			<h2 class="current-word"></h2>
+			<h2 id="current-word"></h2>
 		</div>		
 	</div>
 
 	<div class="row" id="wins-and-img">
 		<div class="col-md-6" id="total-wins">
 			<h3>Total Wins:</h3>
-			<h2 class="wins-count"></h2>
+			<h2 id="wins-count"></h2>
 		</div>
 		<div class="col-md-6" id="candle-gif">
 			<img src="assets/images/candle_gif.gif" alt="flickering candles">
@@ -57,95 +57,7 @@
 
 </div>
 
-<script type="text/javascript">
-// var words = [
-// 	"spell",
-// 	"coven",
-// 	"raven",
-// 	"familiar",
-// 	"devil",
-// 	"magic",
-// 	"cauldron",
-// 	"potion",
-// 	"curse",
-// 	"demon",
-// 	"hex",
-// 	"ancient",
-// 	"occult",
-// 	"illusion",
-// 	"moonlight",
-// 	"mystic",
-// 	"necromancer",
-// 	"sacrifice",
-// 	"shaman",
-// 	"shapeshift",
-// 	"bonfire",
-// 	"enchantment",
-// 	"conjure",
-// 	"alchemy",
-// 	"mystic",
-// 	"siren",
-// 	"sorceress",
-// 	"trance",
-// 	"charm",
-// 	"rune",
-// 	"wizardry",
-// 	"hermit",
-// 	"oracle",
-// 	"omen",
-// 	"supernatural",
-// 	"ritual",
-// 	"snake",
-// 	"incubus",
-// 	"succubus",
-// 	"nightmare",
-// 	"serpent",
-// 	"cemetary",
-// 	"tomb",
-// 	"flames",
-// 	"spirit",
-// 	"poison",
-// 	"venom",
-// 	"spellbook",
-// 	"crone",
-// 	"chant",
-// 	"shadows"
-// ];
-
-// var word = words[Math.floor(Math.random() * words.length)];
-
-// var answerArray = [];
-
-// for (var i = 0; i < word.length; i++) {
-// 	answerArray[i] = "_";
-// }
-
-// var remainingLetters = word.length;
-
-// while (remainingLetters > 0) {
-
-// 	alert(answerArray.join(" "));
-
-// 	var guess = prompt("Guess a letter, or click cancel to stop playing.");
-
-// 	if (guess === null) {
-// 		break;
-// 	} else if (guess.length !== 1) {
-// 		alert("Please enter a single letter.");
-// 	} else {
-// 		for (var j = 0; j < word.length; j++) {
-// 			if (word[j] === guess) {
-// 				answerArray[j] = guess;
-// 				remainingLetters--;
-// 			}
-// 		}
-// 	}
-// }
-
-// alert(answerArray.join(" "));
-
-// alert("Good job! The answer was " + word + ".");
-</script>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
 
 </body>
 
