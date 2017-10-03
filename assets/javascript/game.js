@@ -86,13 +86,11 @@ document.getElementById("current-word").innerHTML = answerArray.join(" ");
 // at a time to see if any matches; if there are matches, show
 // the letter
 
-var remainingLetters = word.length;
+// var remainingLetters = currentWord.length;
 
-
-
-while (remainingLetters > 0) {
-	var guess = onkeyup;
-};
+// while (remainingLetters > 0) {
+// 	var guess = onkeyup;
+// };
 
 // if letter is not in the current word, display it in the "guessed
 // letters" section
@@ -109,7 +107,7 @@ while (remainingLetters > 0) {
 // and a new current word is chosen
 
 
-// var remainingLetters = word.length;
+// var remainingLetters = currentWord.length;
 
 // while (remainingLetters > 0) {
 
@@ -120,8 +118,8 @@ while (remainingLetters > 0) {
 // 	if (guess === null) {
 // 		break;
 // 	} else {
-// 		for (var j = 0; j < word.length; j++) {
-// 			if (word[j] === guess) {
+// 		for (var j = 0; j < currentWord.length; j++) {
+// 			if (currentWord[j] === guess) {
 // 				answerArray[j] = guess;
 // 				remainingLetters--;
 // 			}
@@ -131,4 +129,4 @@ while (remainingLetters > 0) {
 
 // alert(answerArray.join(" "));
 
-// alert("Good job! The answer was " + word + ".");
+// alert("Good job! The answer was " + currentWord + ".");
