@@ -74,8 +74,6 @@ var wordArray = [
 // pick a random word and display in current-word
 var currentWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 
-var str = currentWord;
-
 console.log(currentWord);
 
 // display picked word in "current word", with "_" replacing every 
@@ -91,8 +89,23 @@ document.getElementById("current-word").innerHTML = answerArray.join(" ");
 
 // listen for event keypress
 
+var remainingLetters = currentWord.length;
+
+// var guessedLettersArray = [];
+
 document.addEventListener("keypress", function() {
-		console.log(event.key);
+	var guess = event.key;
+	console.log(guess);
+//	while (remainingLetters > 0) {
+		for (var j = 0; j < currentWord.length; j++) {
+			if (guess === currentWord[j]) {
+					answerArray[j] = guess;
+					remainingLetters--;
+			} else {
+				document.getElementById("guessed-letters").innerHTML = event.key;
+			};
+		};
+//	};
 });
 
 // when a letter is pressed, make sure it is a letter; look 
