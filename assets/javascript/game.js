@@ -1,4 +1,4 @@
-var words = [
+var wordArray = [
 	"spell",
 	"coven",
 	"raven",
@@ -67,9 +67,12 @@ var words = [
 	"exorcism"
 ];
 
-
 // pick a random word and display in current-word
-var currentWord = words[Math.floor(Math.random() * words.length)];
+var currentWord = wordArray[Math.floor(Math.random() * wordArray.length)];
+
+var str = currentWord;
+
+console.log(currentWord);
 
 // display picked word in "current word", with "_" replacing every 
 // letter
@@ -82,15 +85,38 @@ for (var i = 0; i < currentWord.length; i++) {
 
 document.getElementById("current-word").innerHTML = answerArray.join(" ");
 
-// when a letter is pressed, look through current word one letter
-// at a time to see if any matches; if there are matches, show
-// the letter
+// listen for event keypress
 
-// var remainingLetters = currentWord.length;
 
-// while (remainingLetters > 0) {
-// 	var guess = onkeyup;
-// };
+var remainingLetters = currentWord.length;
+
+// var guess = document.keypress;
+
+document.addEventListener("keypress", function() {
+		console.log(keypress);
+});
+
+// when a letter is pressed, make sure it is a letter; look 
+// through current word one letter at a time to see if any 
+// matches; if there are matches, show them in current-word
+
+
+
+
+// document.addEventListener("keypress", function() {
+// 	while (remainingLetters > 0) {
+// 		for (var j = 0; j < currentWord.length; j++) {
+// 			if (currentWord[j] === guess) {
+// 					answerArray[j] = guess;
+// 					remainingLetters--;
+// 			};
+// 		};
+// 	};
+// });
+
+
+
+
 
 // if letter is not in the current word, display it in the "guessed
 // letters" section
@@ -99,34 +125,9 @@ document.getElementById("current-word").innerHTML = answerArray.join(" ");
 // if letter hs already been pressed, do nothing
 
 
-// once 10 letters are in this section, player loses and another
+// once 15 letters are in this section, player loses and another
 // current word is chosen
 
 
 // if user removes all dashes from chosen word, they score 1 point
 // and a new current word is chosen
-
-
-// var remainingLetters = currentWord.length;
-
-// while (remainingLetters > 0) {
-
-// 	alert(answerArray.join(" "));
-
-// 	var guess = onkeyup;
-
-// 	if (guess === null) {
-// 		break;
-// 	} else {
-// 		for (var j = 0; j < currentWord.length; j++) {
-// 			if (currentWord[j] === guess) {
-// 				answerArray[j] = guess;
-// 				remainingLetters--;
-// 			}
-// 		}
-// 	}
-// }
-
-// alert(answerArray.join(" "));
-
-// alert("Good job! The answer was " + currentWord + ".");
