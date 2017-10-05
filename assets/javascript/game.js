@@ -64,7 +64,11 @@ var wordArray = [
 	"druid",
 	"summon",
 	"undead",
-	"exorcism"
+	"exorcism",
+	"nightshade",
+	"hemlock",
+	"succubus",
+	"incubus"
 ];
 
 // pick a random word and display in current-word
@@ -87,13 +91,8 @@ document.getElementById("current-word").innerHTML = answerArray.join(" ");
 
 // listen for event keypress
 
-
-var remainingLetters = currentWord.length;
-
-// var guess = document.keypress;
-
 document.addEventListener("keypress", function() {
-		console.log(keypress);
+		console.log(event.key);
 });
 
 // when a letter is pressed, make sure it is a letter; look 
@@ -102,6 +101,7 @@ document.addEventListener("keypress", function() {
 
 
 
+// var remainingLetters = currentWord.length;
 
 // document.addEventListener("keypress", function() {
 // 	while (remainingLetters > 0) {
