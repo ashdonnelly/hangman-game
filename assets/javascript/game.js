@@ -24,7 +24,6 @@ var wordArray = [
 	"conjure",
 	"alchemy",
 	"mystic",
-	"siren",
 	"sorceress",
 	"trance",
 	"charm",
@@ -66,46 +65,41 @@ var wordArray = [
 	"undead",
 	"exorcism",
 	"nightshade",
-	"hemlock",
-	"succubus",
-	"incubus"
+	"hemlock"
 ];
 
 // pick a random word and display in current-word
 var currentWord = wordArray[Math.floor(Math.random() * wordArray.length)];
-
+var remainingLetters = currentWord.length;
 console.log(currentWord);
 
 // display picked word in "current word", with "_" replacing every 
 // letter
 
 var answerArray = [];
+// var guessedLettersArray = [];
 
 for (var i = 0; i < currentWord.length; i++) {
 	answerArray[i] = "_";
 }
 
-document.getElementById("current-word").innerHTML = answerArray.join(" ");
+// document.getElementById("current-word").innerHTML = answerArray.join(" ");
 
 // listen for event keypress
 
-var remainingLetters = currentWord.length;
-
-// var guessedLettersArray = [];
-
 document.addEventListener("keypress", function() {
 	var guess = event.key;
+
 	console.log(guess);
-//	while (remainingLetters > 0) {
-		for (var j = 0; j < currentWord.length; j++) {
-			if (guess === currentWord[j]) {
-					answerArray[j] = guess;
-					remainingLetters--;
-			} else {
-				document.getElementById("guessed-letters").innerHTML = event.key;
-			};
+	for (var j = 0; j < currentWord.length; j++) {
+		} else if (currentWord[j] === guess) {
+			answerArray[j] = guess;
+			remainingLetters--;
+			document.getElementById("current-word").innerHTML = answerArray.join(" ");
+		} else {
+			document.getElementById("guessed-letters").innerHTML = guess;
 		};
-//	};
+	};
 });
 
 // when a letter is pressed, make sure it is a letter; look 
