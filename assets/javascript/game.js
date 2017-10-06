@@ -20,7 +20,6 @@ var wordArray = [
 	"shaman",
 	"shapeshift",
 	"bonfire",
-	"enchant",
 	"conjure",
 	"alchemy",
 	"mystic",
@@ -35,6 +34,7 @@ var wordArray = [
 	"supernatural",
 	"ritual",
 	"snake",
+	"venom",
 	"equinox",
 	"ceremony",
 	"nightmare",
@@ -48,6 +48,7 @@ var wordArray = [
 	"spellbook",
 	"crone",
 	"chant",
+	"enchant",
 	"shadows",
 	"candlelight",
 	"skull",
@@ -58,14 +59,13 @@ var wordArray = [
 	"solstice",
 	"zodiac",
 	"powers",
-	"incantation",
-	"plague",
+	"pagan",
 	"druid",
 	"summon",
 	"undead",
-	"exorcism",
 	"nightshade",
-	"hemlock"
+	"hemlock",
+	"sage"
 ];
 
 // pick a random word and display in current-word
@@ -77,27 +77,28 @@ console.log(currentWord);
 // letter
 
 var answerArray = [];
-// var guessedLettersArray = [];
 
 for (var i = 0; i < currentWord.length; i++) {
 	answerArray[i] = "_";
 }
 
-// document.getElementById("current-word").innerHTML = answerArray.join(" ");
+document.getElementById("current-word").innerHTML = answerArray.join(" ");
 
 // listen for event keypress
 
 document.addEventListener("keypress", function() {
 	var guess = event.key;
-
 	console.log(guess);
+	var targetDiv = document.getElementById("guessed-letters");
+	var newDiv = document.createElement("div");
 	for (var j = 0; j < currentWord.length; j++) {
-		} else if (currentWord[j] === guess) {
+		if (currentWord[j] === guess) {
 			answerArray[j] = guess;
 			remainingLetters--;
 			document.getElementById("current-word").innerHTML = answerArray.join(" ");
 		} else {
 			document.getElementById("guessed-letters").innerHTML = guess;
+			targetDiv.appendChild(newDiv);
 		};
 	};
 });
