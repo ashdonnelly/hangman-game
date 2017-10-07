@@ -85,7 +85,13 @@ for (var i = 0; i < currentWord.length; i++) {
 document.getElementById("current-word").innerHTML = answerArray.join(" ");
 // document.getElementById("guessed-letters").innerHTML = guessedLettersArray.join(" ");
 
-
+function logLetter() {
+	var guess = event.key;
+	var node = document.createElement("span");
+	var textnode = document.createTextNode(guess);
+	node.appendChild(textnode);
+	document.getElementById("guessed-letters").appendChild(node);
+};
 
 // listen for event keypress;
 // when a letter is pressed, make sure it is a letter; look 
@@ -95,32 +101,15 @@ document.getElementById("current-word").innerHTML = answerArray.join(" ");
 document.addEventListener("keypress", function() {
 	var guess = event.key;
 	console.log(guess);
-	// var targetDiv = document.getElementById("guessed-letters");
-	// var newDiv = document.createElement("div");
 	for (var j = 0; j < currentWord.length; j++) {
 		if (currentWord[j] === guess) {
 			answerArray[j] = guess;
 			remainingLetters--;
 			document.getElementById("current-word").innerHTML = answerArray.join(" ");
-		// } else {
-		// 	logLetter;
-			// var node = document.createElement("p");
-			// var textnode = document.createTextNode(guess);
-			// node.appendChild(textnode);
-			// document.getElementById("guessed-letters").appendChild(node);
 		};
-
 	};
 	logLetter("guessed-letters");
 });
-
-function logLetter() {
-	var guess = event.key;
-	var node = document.createElement("p");
-	var textnode = document.createTextNode(guess);
-	node.appendChild(textnode);
-	document.getElementById("guessed-letters").appendChild(node);
-}
 
 // when guesses-left reaches 0, game over
 // if remainingLetters === 0, add 1 point to totalWins

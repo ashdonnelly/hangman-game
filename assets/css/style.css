@@ -13,6 +13,10 @@ h1 {
 	word-spacing: 10px;
 }
 
+p {
+	display: inline;
+}
+
 #subtitle {
 /*	border-size: 2px;
 	border-style: solid;
@@ -76,13 +80,6 @@ a:hover {
 
 	height: 50px;
 	padding: 10px;
-}
-
-hr {
-	border: 0;
-	width: 80%;
-	color: lightgray;
-	background-color: lightgray;
 }
 
 @media all and (min-width: 777px) {
