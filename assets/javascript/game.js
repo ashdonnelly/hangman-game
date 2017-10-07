@@ -71,45 +71,65 @@ var wordArray = [
 // pick a random word and display in current-word
 var currentWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 var remainingLetters = currentWord.length;
+var answerArray = [];
+// var guessedLettersArray = [];
 console.log(currentWord);
 
 // display picked word in "current word", with "_" replacing every 
 // letter
-
-var answerArray = [];
 
 for (var i = 0; i < currentWord.length; i++) {
 	answerArray[i] = "_";
 }
 
 document.getElementById("current-word").innerHTML = answerArray.join(" ");
+// document.getElementById("guessed-letters").innerHTML = guessedLettersArray.join(" ");
 
-// listen for event keypress
+
+
+// listen for event keypress;
+// when a letter is pressed, make sure it is a letter; look 
+// through current word one letter at a time to see if any 
+// matches; if there are matches, show them in current-word
 
 document.addEventListener("keypress", function() {
 	var guess = event.key;
 	console.log(guess);
-	var targetDiv = document.getElementById("guessed-letters");
-	var newDiv = document.createElement("div");
+	// var targetDiv = document.getElementById("guessed-letters");
+	// var newDiv = document.createElement("div");
 	for (var j = 0; j < currentWord.length; j++) {
 		if (currentWord[j] === guess) {
 			answerArray[j] = guess;
 			remainingLetters--;
 			document.getElementById("current-word").innerHTML = answerArray.join(" ");
-		} else {
-			document.getElementById("guessed-letters").innerHTML = guess;
-			targetDiv.appendChild(newDiv);
+		// } else {
+		// 	logLetter;
+			// var node = document.createElement("p");
+			// var textnode = document.createTextNode(guess);
+			// node.appendChild(textnode);
+			// document.getElementById("guessed-letters").appendChild(node);
 		};
+
 	};
+	logLetter("guessed-letters");
 });
 
-// when a letter is pressed, make sure it is a letter; look 
-// through current word one letter at a time to see if any 
-// matches; if there are matches, show them in current-word
+function logLetter() {
+	var guess = event.key;
+	var node = document.createElement("p");
+	var textnode = document.createTextNode(guess);
+	node.appendChild(textnode);
+	document.getElementById("guessed-letters").appendChild(node);
+}
 
+// when guesses-left reaches 0, game over
+// if remainingLetters === 0, add 1 point to totalWins
 
+// var totalWins = 0;
+// var guessesLeft = 13;
+// document.getElementById("wins-count") = totalWins;
+// document.getElementById("guesses-left") = guessesLeft;
 
-// var remainingLetters = currentWord.length;
 
 // document.addEventListener("keypress", function() {
 // 	while (remainingLetters > 0) {
@@ -130,7 +150,7 @@ document.addEventListener("keypress", function() {
 // letters" section
 
 
-// if letter hs already been pressed, do nothing
+// if letter has already been pressed, do nothing
 
 
 // once 15 letters are in this section, player loses and another

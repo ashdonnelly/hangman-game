@@ -14,10 +14,15 @@ h1 {
 }
 
 #subtitle {
+/*	border-size: 2px;
+	border-style: solid;
+	border-color: pink;*/
+
 	font-size: 30px;
 	letter-spacing: 1px;
 	word-spacing: 5px;
-	padding: 30px;
+	padding-top: 15px;
+	padding-bottom: 20px;
 }
 
 a {
@@ -30,14 +35,58 @@ a:hover {
 	color: darkgray;
 }
 
-#total-wins {
-	padding-top: 150px;
+#wins-count {
+/*	border-size: 2px;
+	border-style: solid;
+	border-color: pink;*/
+
+	height: 75px;
+	margin-bottom: -20px;
 }
 
 #current-word {
+/*	border-size: 2px;
+	border-style: solid;
+	border-color: pink;*/
+
 	font-size: 80px;
 }
 
 #candle-gif {
+/*	border-size: 2px;
+	border-style: solid;
+	border-color: pink;*/
+
 	height: 500px;
+}
+
+#guesses-left {
+/*	border-size: 2px;
+	border-style: solid;
+	border-color: pink;*/
+
+	height: 75px;
+	margin-bottom: -20px;
+}
+
+#guessed-letters {
+/*	border-size: 2px;
+	border-style: solid;
+	border-color: pink;*/
+
+	height: 50px;
+	padding: 10px;
+}
+
+hr {
+	border: 0;
+	width: 80%;
+	color: lightgray;
+	background-color: lightgray;
+}
+
+@media all and (min-width: 777px) {
+	#current-word {
+		padding-top: 100px;
+	}
 }
