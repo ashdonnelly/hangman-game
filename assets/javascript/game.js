@@ -72,7 +72,8 @@ var wordArray = [
 var currentWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 var remainingLetters = currentWord.length;
 var answerArray = [];
-// var guessedLettersArray = [];
+var totalWins = 0;
+var guessesLeft = 12;
 console.log(currentWord);
 
 // display picked word in "current word", with "_" replacing every 
@@ -83,7 +84,6 @@ for (var i = 0; i < currentWord.length; i++) {
 }
 
 document.getElementById("current-word").innerHTML = answerArray.join(" ");
-// document.getElementById("guessed-letters").innerHTML = guessedLettersArray.join(" ");
 
 function logLetter() {
 	var guess = event.key;
@@ -92,6 +92,7 @@ function logLetter() {
 	node.appendChild(textnode);
 	document.getElementById("guessed-letters").appendChild(node);
 };
+
 
 // listen for event keypress;
 // when a letter is pressed, make sure it is a letter; look 
@@ -106,9 +107,12 @@ document.addEventListener("keypress", function() {
 			answerArray[j] = guess;
 			remainingLetters--;
 			document.getElementById("current-word").innerHTML = answerArray.join(" ");
+		} else {
+			// document.getElementById("guesses-left").innerHTML = guessesLeft--;
 		};
 	};
 	logLetter("guessed-letters");
+	document.getElementById("guesses-left").innerHTML = guessesLeft--;
 });
 
 // when guesses-left reaches 0, game over
