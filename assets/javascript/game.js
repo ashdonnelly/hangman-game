@@ -7,7 +7,6 @@ var wordArray = [
 var currentWord = wordArray[Math.floor(Math.random() * wordArray.length)];
 
 // some variables
-var remainingLetters = currentWord.length;
 var answerArray = [];
 var guessesLeft = 12;
 var totalWins = 0;
@@ -17,7 +16,9 @@ console.log(currentWord);
 // measure length of current-word and insert _ in each index
 for (var i = 0; i < currentWord.length; i++) {
 	answerArray[i] = "_";
-}
+};
+
+var remainingLetters = currentWord.length;
 //add into current-word element with spaces in between
 document.getElementById("current-word").innerHTML = answerArray.join(" ");
 
@@ -30,15 +31,26 @@ var logLetter = function () {
 	document.getElementById("guessed-letters").appendChild(node);
 };
 
-var lose = function () {
-	if (guessesLeft === 0) {
-		// restart gameSetUp function?
+// var lose = function () {
+// 	if (guessesLeft === 0) {
+// 		// restart gameSetUp function?
+// 	};
+// };
+
+var restart = function() {
+	var answerArray = [];
+	var guessesLeft = 12;
+	var currentWord = wordArray[Math.floor(Math.random() * wordArray.length)];
+	for (var i = 0; i < currentWord.length; i++) {
+		answerArray[i] = "_";
 	};
+	document.getElementById("current-word").innerHTML = answerArray.join(" ");
 };
 
-var winPoint = function () {
+var winPoint = function() {
 	if (remainingLetters === 0) {
 		document.getElementById("wins-count").innerHTML = ++totalWins;
+		document.restart;
 	};
 };
 
@@ -48,17 +60,17 @@ var winPoint = function () {
 // matches; if there are matches, show them in current-word
 
 document.addEventListener("keypress", function() {
-	var guess = event.key;
-	for (var j = 0; j < currentWord.length; j++) {
-		if (currentWord[j] === guess) {
-			answerArray[j] = guess;
-			remainingLetters--;
-			document.getElementById("current-word").innerHTML = answerArray.join(" ");
+		var guess = event.key;
+		for (var j = 0; j < currentWord.length; j++) {
+			if (currentWord[j] === guess) {
+				answerArray[j] = guess;
+				remainingLetters--;
+				document.getElementById("current-word").innerHTML = answerArray.join(" ");
+			};
 		};
-	};
-	logLetter("guessed-letters");
-	document.getElementById("guesses-left").innerHTML = guessesLeft--;
-	winPoint("wins-count");
+		logLetter("guessed-letters");
+		document.getElementById("guesses-left").innerHTML = guessesLeft--;
+		winPoint("wins-count");
 });
 
 // add to wins
