@@ -1,6 +1,6 @@
-Week 3 Homework
+# Week 3 Homework
 
-Hangman Game w/ Spooky Witch Theme
+# Hangman Game w/ Spooky Witch Theme
 
 Demonstrates: JS basics; JS html manipulation; Bootstrap; interactive game creation
 
